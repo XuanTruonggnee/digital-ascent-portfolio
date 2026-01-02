@@ -8,12 +8,20 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// GitHub Pages often serves the app from a subpath (/repo-name/).
+// Derive router basename from the document base URL so routes match in both dev and Pages.
+const routerBasename = (() => {
+  const pathname = new URL(document.baseURI).pathname;
+  const cleaned = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+  return cleaned === "" ? "/" : cleaned;
+})();
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={routerBasename}>
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
