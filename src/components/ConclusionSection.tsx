@@ -122,11 +122,11 @@ export function ConclusionSection() {
               </p>
               <div className="flex items-center justify-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">
-                  N
+                  V
                 </div>
                 <div className="text-left">
-                  <p className="font-semibold">Nguyễn Văn A</p>
-                  <p className="text-sm text-muted-foreground">Sinh viên CNTT</p>
+                  <p className="font-semibold">Vũ Văn Điềm</p>
+                  <p className="text-sm text-muted-foreground">Sinh viên Kinh tế - Chính trị</p>
                 </div>
               </div>
             </div>
