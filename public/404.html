@@ -6,8 +6,13 @@
     <script>
       // Single Page Apps for GitHub Pages
       // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 1;
+      // Works for both:
+      // - Project Pages: https://username.github.io/repo-name/
+      // - User/Org Pages: https://username.github.io/
       var l = window.location;
+      var segments = l.pathname.split('/').filter(Boolean);
+      var pathSegmentsToKeep = segments.length > 1 ? 1 : 0;
+
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
         l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
